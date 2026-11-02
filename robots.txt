@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lichtbach2006-bot.github.io/sitemap.xml
