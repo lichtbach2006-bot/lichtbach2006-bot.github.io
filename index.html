@@ -42,7 +42,7 @@
 /* Layout: fixed profile rail on the left + bento home and stacked sections on a contour-line background; rail folds into a header on phones */
 :root{
   --bg:#EDF0F4; --surface:#FFFFFF; --surface-2:#F5F7FA; --ink:#0F1B2D; --muted:#5A6577; --line:#DAE0E8;
-  --accent:#D9701A; --accent-soft:#FBEBDD; --signal:#178A55; --signal-soft:#DDF2E7; --contour:rgba(15,27,45,.09);
+  --accent:#2563EB; --accent-soft:#DCE7FD; --on-accent:#FFFFFF; --signal:#178A55; --signal-soft:#DDF2E7; --contour:rgba(15,27,45,.09);
   --shadow:0 1px 2px rgba(15,27,45,.04),0 8px 24px rgba(15,27,45,.06);
   --f-display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
   --f-body:"Manrope",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
@@ -51,13 +51,13 @@
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --bg:#0A111E; --surface:#111A2A; --surface-2:#0D1524; --ink:#E7EDF5; --muted:#94A1B5; --line:#1E2A3E;
-  --accent:#F29444; --accent-soft:#2A1F16; --signal:#3DC98C; --signal-soft:#11291F; --contour:rgba(170,190,220,.07);
+  --accent:#60A5FA; --accent-soft:#132440; --on-accent:#0A111E; --signal:#3DC98C; --signal-soft:#11291F; --contour:rgba(170,190,220,.07);
   --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.25); color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#0A111E; --surface:#111A2A; --surface-2:#0D1524; --ink:#E7EDF5; --muted:#94A1B5; --line:#1E2A3E;
-  --accent:#F29444; --accent-soft:#2A1F16; --signal:#3DC98C; --signal-soft:#11291F; --contour:rgba(170,190,220,.07);
+  --accent:#60A5FA; --accent-soft:#132440; --on-accent:#0A111E; --signal:#3DC98C; --signal-soft:#11291F; --contour:rgba(170,190,220,.07);
   --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.25); color-scheme:dark}
-
+  
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
@@ -121,7 +121,7 @@ section{scroll-margin-top:24px}
 a.card{text-decoration:none}
 a.card:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--accent) 45%,var(--line))}
 .ch{display:flex;align-items:center;gap:10px}
-.badge{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:var(--accent);color:#fff;flex:none}
+.badge{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:var(--accent);color:var(--on-accent);flex:none}
 .badge svg{width:18px;height:18px}
 .ch h3{margin:0;font-family:var(--f-display);font-weight:700;font-size:19px;letter-spacing:-.01em}
 .card p.sub{margin:0;color:var(--muted);font-size:13.5px}
@@ -166,7 +166,7 @@ a.shot:hover img{transform:scale(1.02)}
 .proj p{margin:0;color:var(--muted);font-size:14px}
 .proj ul{margin:0;padding-left:18px;font-size:13.5px;display:grid;gap:3px}
 .proj .chips{padding-top:6px}
-.live{margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:99px;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:14px;transition:transform .2s}
+.live{margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:99px;background:var(--accent);color:var(--on-accent);text-decoration:none;font-weight:700;font-size:14px;transition:transform .2s}
 .live:hover{transform:translateY(-2px)}
 .live svg{width:15px;height:15px}
 
@@ -206,7 +206,7 @@ td code{font-family:var(--f-mono);font-size:12px;background:var(--surface-2);bor
 .mailbox{display:flex;flex-direction:column;gap:12px;justify-content:center}
 .copy{display:flex;align-items:center;gap:10px;padding:8px 8px 8px 16px;border-radius:14px;background:color-mix(in srgb,var(--bg) 10%,transparent);border:1px solid color-mix(in srgb,var(--bg) 20%,transparent);min-width:0}
 .copy code{flex:1;min-width:0;font-family:var(--f-mono);font-size:14px;overflow-wrap:anywhere;user-select:all}
-.copy button{flex:none;border:0;border-radius:10px;padding:9px 14px;background:var(--accent);color:#fff;font:700 13px var(--f-body);cursor:pointer}
+.copy button{flex:none;border:0;border-radius:10px;padding:9px 14px;background:var(--accent);color:var(--on-accent);font:700 13px var(--f-body);cursor:pointer}
 .linkrow{display:flex;gap:10px;flex-wrap:wrap}
 .linkrow a{padding:8px 14px;border-radius:99px;border:1px solid color-mix(in srgb,var(--bg) 25%,transparent);text-decoration:none;font-size:13px;font-weight:600}
 .linkrow a:hover{border-color:var(--accent)}
